@@ -8,7 +8,7 @@ This project is created by :
 - Hadrien Lepoutre
 - Pierrick Inesta
 - Brandon Collen
-- Louis Ralliand
+- Louis Rialliand
 
 ## Gitignore(s)
 
