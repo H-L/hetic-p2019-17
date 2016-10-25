@@ -17,11 +17,20 @@
     -webkit-font-smoothing: antialiased;
  }
 
-#test {
-    width:250%;
-    height:300%;
-}
+.st0{fill:none;stroke:#E73291;stroke-width:3;stroke-miterlimit:10;}
+.st1{fill:none;stroke:#FAE849;stroke-width:3;stroke-miterlimit:10;}
+.st2{fill:none;stroke:url(#SVGID_1_);stroke-width:3;stroke-miterlimit:10;}
+.st3{fill:none;stroke:url(#SVGID_2_);stroke-width:3;stroke-miterlimit:10;}
 
+.st2 {
+    stroke-dasharray: 200;
+    animation:neon 25s linear infinite ;
+}
+@keyframes neon {
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
 svg {
     width:100vw;
     height:100vh;
