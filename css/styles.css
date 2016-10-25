@@ -1,0 +1,28 @@
+.section_home {
+    background: #321256;
+    width:100vw;
+    height:100vh;
+}
+@font-face {
+    src:url(../fonts/PAC.TTF);
+    font-family: pac;
+}
+
+.logo_title {
+    font-family: pac;
+    color:#321256;
+    text-shadow:0.5px 0.5px #dd8279;
+    font-size:150px;
+    position:relative;
+    -webkit-font-smoothing: antialiased;
+ }
+
+#test {
+    width:250%;
+    height:300%;
+}
+
+svg {
+    width:100vw;
+    height:100vh;
+}
