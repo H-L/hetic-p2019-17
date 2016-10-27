@@ -1,64 +1,63 @@
+
+/* FONT */
+@font-face {
+    src: url(../fonts/PAC.TTF);
+    font-family: pac;
+}
+
+@font-face {
+    src: url(../fonts/Poppins-Medium.TTF);
+    font-family: poppinsM;
+}
+
+/* HOME */
+
+/* ADD TRAME BACKGROUND */
 .section_home {
-  background: #321256;
-  width: 100vw;
-  height: 100vh;
+
+    background: repeating-linear-gradient(
+            0deg,
+            #2b134b,
+            #2b134b 5px,
+            #311556 5px,
+            #311556 10px
+    );
+    width: 100vw;
+    height: 100vh;
+    position: relative;
 }
 
-@font-face {
-  src: url(../fonts/PAC.TTF);
-  font-family: pac;
-}
-
-@font-face {
-  src: url(../fonts/Poppins-Medium.TTF);
-  font-family: poppinsM;
-}
-
-.logo_title {
-  font-family: pac;
-  color: #321256;
-  text-shadow: 0.5px 0.5px #dd8279;
-  font-size: 150px;
-  position: relative;
-  -webkit-font-smoothing: antialiased;
-}
-
+/* ANIMATION LOGO */
 .st0 {
-  fill: none;
-  stroke: #E73291;
-  stroke-width: 3;
-  stroke-miterlimit: 10;
+    fill: none;
+    stroke: #E73291;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
 }
 
 .st1 {
-  fill: none;
-  stroke: #FAE849;
-  stroke-width: 3;
-  stroke-miterlimit: 10;
+    fill: none;
+    stroke: #FAE849;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
 }
 
 .st2 {
-  fill: none;
-  stroke: url(#SVGID_1_);
-  stroke-width: 3;
-  stroke-miterlimit: 10;
+    fill: none;
+    stroke: url(#SVGID_1_);
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 400;
+    animation: neon 25s linear infinite reverse;
 }
 
 .st3 {
-  fill: none;
-  stroke: url(#SVGID_2_);
-  stroke-width: 3;
-  stroke-miterlimit: 10;
-}
-
-.st3 {
-  stroke-dasharray: 400;
-  animation: neon 25s linear infinite;
-}
-
-.st2 {
-  stroke-dasharray: 400;
-  animation: neon 25s linear infinite reverse;
+    fill: none;
+    stroke: url(#SVGID_2_);
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 400;
+    animation: neon 25s linear infinite;
 }
 
 @keyframes neon {
@@ -67,53 +66,55 @@
   }
 }
 
+
 svg {
   width: 100vw;
   height: 80vh;
 }
 
+/* Glitch animation Exlore */
+
 .explore_button {
-  position: relative;
-  font-size: 36px;
-  font-family: poppinsM;
-  color: white;
-  width: fit-content;
-  text-align: center;
-  margin: auto;
-  cursor: pointer;
+
+
+    position: relative;
+    font-size: 36px;
+    font-family: poppinsM;
+    color: white;
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
 }
 
-.explore_button::before, .explore_button::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.explore_button::before,
+.explore_button::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .explore_button::before {
-  /* ... anything needed to make it identical */
-  /* variation */
-  left: 2px;
-  text-shadow: -1px 0px red;
-  /* important: opaque background masks the original */
-  clip: rect(44px, 450px, 56px, 0);
-  /*
-      Essentially a box from 0, 44px
-      to 450px, 56px
-    */
-  animation: example-one-anim-1 2s infinite linear alternate-reverse;
+
+    /* variation */
+    left: 2px;
+    text-shadow: -1px 0px red;
+
+    /* call animation */
+    animation: example-one-anim-1 2s infinite linear alternate-reverse;
 }
 
 .explore_button::after {
-  /* ... anything needed to make it identical */
-  /* variation */
-  left: -2px;
-  text-shadow: -1px 0 blue;
-  /* important: opaque background masks the original */
-  animation: example-one-anim-2 2s infinite linear alternate-reverse;
-}
+
+    /* variation */
+    left: -2px;
+    text-shadow: -1px 0 blue;
+
+    /* call animation */
+    animation: example-one-anim-2 2s infinite linear alternate-reverse;
 
 @keyframes example-one-anim-1 {
   0% {
@@ -228,3 +229,7 @@ svg {
     clip: rect(1px, 450px, 113px, 0);
   }
 }
+
+
+
+
