@@ -2,8 +2,8 @@
 
 // Glitch Line Vars
 var glitch_lines = 5,
-    glitch_line_duration_min = 50,
-    glitch_line_duration_max = 100,
+    glitch_line_duration_min = 5000,
+    glitch_line_duration_max = 8000,
     glitch_line_timer_min = 1000,
     glitch_line_timer_max = 5000,
     glitch_line_wait_min = 100,
@@ -12,6 +12,8 @@ var glitch_lines = 5,
     glitch_line_height_max = 15,
     glitch_line_width_min = 100,
     glitch_line_width_max = 500;
+    glitch_line_opacity_min = 0.1;
+    glitch_line_opacity_max=0.8;
 
 // Do you want to autostart on page load?
 var glitch_autostart = 1;
@@ -102,7 +104,8 @@ function glitchline() {
             'position': 'fixed',
             'overflow': 'hidden',
             'display': 'block',
-            'background': '#FFF'
+            'opacity': randomInt(glitch_line_opacity_min, glitch_line_opacity_max),
+            'background': 'white'
         });
         // Set random scroll top & scroll left.
         $(div).scrollTop(randomInt(0, $(window).height()));
