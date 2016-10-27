@@ -115,7 +115,7 @@ svg {
 
     /* call animation */
     animation: example-one-anim-2 2s infinite linear alternate-reverse;
-
+}
 @keyframes example-one-anim-1 {
   0% {
     clip: rect(43px, 450px, 48px, 0);
