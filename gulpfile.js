@@ -11,6 +11,9 @@ gulp.task('scss', function () {
 		.pipe(plugins.sass())
 		.pipe(plugins.postcss(processors))
 		.pipe(gulp.dest('css'))
+		.pipe(plugins.notify({
+			message: 'SCSS Compiled'
+		}))
 });
 
 gulp.task('sync', ['scss'], function () {
