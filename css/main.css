@@ -8,6 +8,9 @@
   font-family: poppinsM; }
 
 /* Glitch animation Exlore */
+.test {
+  color: #fff; }
+
 .explore_button {
   position: relative;
   font-size: 36px;
