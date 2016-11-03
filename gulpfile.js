@@ -10,10 +10,10 @@ var processors = [plugins.autoprefixer];
 
 // -- WATCH
 // Add minjs task when JS would be ready
-gulp.task('watch', ['browserSync', 'scss', 'normaljs'], function () {
+gulp.task('watch', ['browserSync', 'scss', 'normaljs', 'html'], function () {
 	gulp.watch('app/**/*.scss', ['scss']);
 	gulp.watch('app/**/*.js', ['normaljs']);
-	gulp.watch('dist/**/*.html', reload);
+	gulp.watch('app/**/*.html', ['html']);
 });
 
 // -- SCSS
