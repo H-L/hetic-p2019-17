@@ -62,11 +62,24 @@ gulp.task('normaljs', function () {
 		.pipe(reload({ stream:true }));
 });
 
+// -- SVG Minifier
+gulp.task('svg', function () {
+	return gulp.src('app/**/*.svg')
+		.pipe(plugins.svgmin())
+		.pipe(gulp.dest('./dist'))
+		.pipe(plugins.notify({
+			message: 'SVG Minified'
+		}));
+});
+
 // -- Copy / Paste HTML
 gulp.task('html', function () {
 	return gulp.src('app/**/*.html')
 		.pipe(plugins.htmlclean())
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist'))
+		.pipe(plugins.notify({
+			message: 'HTML Minified'
+		}));
 });
 
 // -- Browser Sync Parameters
