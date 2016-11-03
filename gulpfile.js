@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({
 	pattern: '*'
 });
+var reload = plugins.browserSync.reload;
 
 var processors = [plugins.autoprefixer];
 
@@ -19,10 +20,11 @@ gulp.task('scss', function () {
 		.pipe(plugins.notify({
 			message: 'SCSS Compiled'
 		}))
+		.pipe(reload({ stream:true }));
 });
 
 gulp.task('minjs', function () {
-	return gulp.src('app/js/*.js')
+	return gulp.src('app/**/*.js')
 		.pipe(plugins.minify({
 			ext: {
 				src: '-debug.js',
@@ -31,12 +33,33 @@ gulp.task('minjs', function () {
 			exclude: ['tasks'],
 			ignoreFiles: ['.combo.js', '-min.js']
 		}))
-		.pipe(gulp.dest('dist/js'));
+		.pipe(gulp.dest('dist/js'))
+		.pipe(plugins.notify({
+			message: 'JS Uglified'
+		}))
+		.pipe(reload({ stream:true }));
 });
 
-gulp.task('sync', ['scss'], function () {
-	plugins.browserSync.init({
-		server: './'
-	})
-	gulp.watch("app/scss/**/*.scss", ['scss']);
+gulp.task('normaljs', function () {
+	return gulp.src('app/js/*.js')
+		.pipe(gulp.dest('dist/js'))
+		.pipe(plugins.notify({
+			message: 'JS Uploaded in dist file'
+		}))
+		.pipe(reload({ stream:true }));
+});
+
+gulp.task('browserSync', function() {
+  plugins.browserSync.init({
+    server: {
+      baseDir: './dist'
+    },
+  })
+})
+
+// Add minjs task when JS would be ready
+gulp.task('watch', ['browserSync', 'scss', 'normaljs'], function () {
+	gulp.watch('app/**/*.scss', ['scss']);
+	gulp.watch('app/**/*.js', ['normaljs']);
+	gulp.watch('dist/**/*.html', reload);
 });
