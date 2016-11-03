@@ -6,6 +6,17 @@ var reload = plugins.browserSync.reload;
 
 var processors = [plugins.autoprefixer];
 
+// TASKS
+
+// -- WATCH
+// Add minjs task when JS would be ready
+gulp.task('watch', ['browserSync', 'scss', 'normaljs'], function () {
+	gulp.watch('app/**/*.scss', ['scss']);
+	gulp.watch('app/**/*.js', ['normaljs']);
+	gulp.watch('dist/**/*.html', reload);
+});
+
+// -- SCSS
 gulp.task('scss', function () {
 	return gulp.src('app/scss/main.scss')
 		.pipe(plugins.plumber())
@@ -23,6 +34,7 @@ gulp.task('scss', function () {
 		.pipe(reload({ stream:true }));
 });
 
+// -- Minify JS
 gulp.task('minjs', function () {
 	return gulp.src('app/**/*.js')
 		.pipe(plugins.minify({
@@ -40,6 +52,7 @@ gulp.task('minjs', function () {
 		.pipe(reload({ stream:true }));
 });
 
+// -- Copy / Paste JS without Uglify
 gulp.task('normaljs', function () {
 	return gulp.src('app/js/*.js')
 		.pipe(gulp.dest('dist/js'))
@@ -49,6 +62,14 @@ gulp.task('normaljs', function () {
 		.pipe(reload({ stream:true }));
 });
 
+// -- Copy / Paste HTML
+gulp.task('html', function () {
+	return gulp.src('app/**/*.html')
+		.pipe(plugins.htmlclean())
+		.pipe(gulp.dest('./dist'));
+});
+
+// -- Browser Sync Parameters
 gulp.task('browserSync', function() {
   plugins.browserSync.init({
     server: {
@@ -56,10 +77,3 @@ gulp.task('browserSync', function() {
     },
   })
 })
-
-// Add minjs task when JS would be ready
-gulp.task('watch', ['browserSync', 'scss', 'normaljs'], function () {
-	gulp.watch('app/**/*.scss', ['scss']);
-	gulp.watch('app/**/*.js', ['normaljs']);
-	gulp.watch('dist/**/*.html', reload);
-});
