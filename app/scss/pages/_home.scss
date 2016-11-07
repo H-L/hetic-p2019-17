@@ -1,11 +1,18 @@
-
-/* Glitch animation Exlore */
-.test{
-	color: #fff;
+/* Menu */
+.menu {
+  font-family: poppinsM;
+  font-size:20px;
+  color:white;
+  width: fit-content;
+  margin-top: 5vw;
+  margin-left: 5vh;
+  float:left;
 }
+/* Glitch animation Exlore */
+
 .explore_button {
 position: relative;
-font-size: 36px;
+font-size: 20px;
 font-family: poppinsM;
 color: white;
 width: fit-content;
@@ -156,7 +163,8 @@ animation: example-one-anim-2 2s infinite linear alternate-reverse;
 }
 svg {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
+  margin-top:10vw;
 }
 
 /* HOME */
@@ -166,14 +174,16 @@ svg {
 
   background: repeating-linear-gradient(
                   0deg,
-                  #2b134b,
-                  #2b134b 5px,
-                  #311556 5px,
-                  #311556 10px
+                  #2d1351,
+                  #2d1351 2px,
+                  #311556 2px,
+                  #311556 5px
   );
   width: 100vw;
   height: 100vh;
   position: relative;
+  animation:10s focus linear infinite alternate;
+
 }
 
 /* ANIMATION LOGO */
@@ -213,4 +223,131 @@ svg {
   to {
     stroke-dashoffset: 2000;
   }
+}
+
+
+/* BACKGROUND animation */
+
+@keyframes focus {
+  from {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 0px 100px, 0px 100px, 0px -100px, 0 -100px;
+  }
+}
+
+
+/*PROGRAMMATION */
+
+.section_programmation {
+
+  background: repeating-linear-gradient(
+                  0deg,
+                  #2b134b,
+                  #2b134b 5px,
+                  #311556 5px,
+                  #311556 10px
+  );
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  padding-top:5vh;
+  padding-bottom:5vh;
+
+}
+
+.programmation_container {
+  width:80%;
+  margin:auto;
+  padding-top:5%;
+}
+.programmation_artist {
+  font-family:"roboto light";
+  font-size:20px;
+  text-align:center;
+  padding:5%;
+  color:white;
+  position:relative;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+}
+.programmation_title__container {
+  position:relative;
+  width:30%;
+  margin:auto;
+  height:80px;
+
+}
+.programmation_title__firstPart {
+  width:fit-content;
+  margin:auto;
+  color: #fff39b;
+  font-family: roboto thin;
+  font-size:50px;
+  font-style:italic;
+  margin-top:0;
+  padding-top:5%;
+  position:absolute;
+  top:-5px;
+  text-shadow:2px 2px #f1209d;
+
+}
+
+
+
+.programmation_title__thirdPart {
+  width:fit-content;
+  margin:auto;
+  color:#fe00af;
+  font-family: streamster;
+  font-size:50px;
+  font-style:italic;
+  margin-top:0;
+  padding-top:5%;
+  position:absolute;
+  transform:rotate(-5deg);
+  bottom:-10px;
+  left:-60px;
+  text-shadow:1px 1px white;
+}
+/* Glitch animation Artist */
+
+
+
+.programmation_artist.changed::before,
+.programmation_artist.changed::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.programmation_artist.changed::before {
+  /* variation */
+  left: 2px;
+  text-shadow: -1px 0px red;
+
+  /* call animation */
+  animation: example-one-anim-1 2s infinite linear alternate-reverse;
+}
+
+.programmation_artist.changed::after {
+  /* variation */
+  left: -2px;
+  text-shadow: -1px 0 blue;
+
+  /* call animation */
+  animation: example-one-anim-2 2s infinite linear alternate-reverse;
+}
+
+.image_artist_1 {
+  position:absolute;
+  left: 10px;
+  top: 50px;
+  width:25%;
+
 }
