@@ -17,3 +17,8 @@ The project has multiple `gitignore` files. It allows more flexibility throught 
 You can find a bunch of different `gitignore` files [right here](https://github.com/github/gitignore).
 
 We are using the official [macOS.gitignore](https://github.com/github/gitignore/blob/master/Global/macOS.gitignore) and the custom [front-h3-t1.gitignore](https://github.com/H-L/hetic-p2019-17/blob/master/front-h3-t1.gitignore).
+
+**EDIT**
+
+We had issues with this way to ignore files. It stopped working suddendly and we did'nt find why...
+We finally used a normal `.gitignore` file.
