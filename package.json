@@ -1,16 +1,9 @@
 {
-  "name": "siripresident",
+  "name": "hetic-p2019-17",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "\u001b[A\u001b[C"
-  ],
-  "author": "",
-  "license": "ISC",
+  "description": "## Collaborators",
+  "main": "gulpfile.js",
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "browser-sync": "^2.17.5",
@@ -27,7 +20,17 @@
     "gulp-svgmin": "^1.2.3",
     "node-sass": "^3.10.1"
   },
-  "dependencies": {
-    "normalize-scss": "^6.0.0"
-  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-L/hetic-p2019-17.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H-L/hetic-p2019-17/issues"
+  },
+  "homepage": "https://github.com/H-L/hetic-p2019-17#readme"
 }
