@@ -1,0 +1,1 @@
+function random_artist_highlight(){var a=Math.ceil(10*Math.random())-5;console.log(a);var r=$(".programmation_container").children().toArray();r[2].addClass("changed")}random_artist_highlight();

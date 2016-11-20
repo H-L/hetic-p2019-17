@@ -15,10 +15,12 @@ position: relative;
 font-size: 20px;
 font-family: poppinsM;
 color: white;
-width: fit-content;
+
 text-align: center;
 margin: auto;
+  display:block;
 cursor: pointer;
+  text-decoration:none;
 }
 
 .explore_button::before,
@@ -244,16 +246,15 @@ svg {
 
   background: repeating-linear-gradient(
                   0deg,
-                  #2b134b,
-                  #2b134b 5px,
-                  #311556 5px,
-                  #311556 10px
+                  #2d1351,
+                  #2d1351 2px,
+                  #311556 2px,
+                  #311556 5px
   );
   width: 100vw;
   height: 100vh;
   position: relative;
-  padding-top:5vh;
-  padding-bottom:5vh;
+  animation:10s focus linear infinite alternate;
 
 }
 
@@ -261,6 +262,7 @@ svg {
   width:80%;
   margin:auto;
   padding-top:5%;
+  position:relative;
 }
 .programmation_artist {
   font-family:"roboto light";
@@ -278,6 +280,7 @@ svg {
   width:30%;
   margin:auto;
   height:80px;
+  padding-top:15%;
 
 }
 .programmation_title__firstPart {
@@ -290,7 +293,7 @@ svg {
   margin-top:0;
   padding-top:5%;
   position:absolute;
-  top:-5px;
+  top:50px;
   text-shadow:2px 2px #f1209d;
 
 }
@@ -310,7 +313,7 @@ svg {
   transform:rotate(-5deg);
   bottom:-10px;
   left:-60px;
-  text-shadow:1px 1px white;
+  text-shadow:0px 0px white;
 }
 /* Glitch animation Artist */
 
@@ -344,10 +347,8 @@ svg {
   animation: example-one-anim-2 2s infinite linear alternate-reverse;
 }
 
-.image_artist_1 {
+.image_artist {
+  width:30%;
   position:absolute;
-  left: 10px;
-  top: 50px;
-  width:25%;
-
+  opacity:0;
 }
