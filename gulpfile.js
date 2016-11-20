@@ -16,6 +16,14 @@ gulp.task('watch', ['browserSync', 'scss', 'normaljs', 'html'], function () {
 	gulp.watch('app/**/*.html', ['html']);
 });
 
+// -- WATCH
+// Add minjs task when JS would be ready
+gulp.task('compile', [ 'scss', 'normaljs', 'html'], function () {
+	gulp.watch('app/**/*.scss', ['scss']);
+	gulp.watch('app/**/*.js', ['normaljs']);
+	gulp.watch('app/**/*.html', ['html']);
+});
+
 // -- SCSS
 gulp.task('scss', function () {
 	return gulp.src('app/scss/main.scss')
@@ -28,9 +36,9 @@ gulp.task('scss', function () {
 		}))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest('dist/css'))
-		.pipe(plugins.notify({
+		/*.pipe(plugins.notify({
 			message: 'SCSS Compiled'
-		}))
+		}))*/
 		.pipe(reload({ stream:true }));
 });
 
@@ -46,9 +54,9 @@ gulp.task('minjs', function () {
 			ignoreFiles: ['.combo.js', '-min.js']
 		}))
 		.pipe(gulp.dest('dist/js'))
-		.pipe(plugins.notify({
+		/*.pipe(plugins.notify({
 			message: 'JS Uglified'
-		}))
+		}))*/
 		.pipe(reload({ stream:true }));
 });
 
@@ -56,9 +64,9 @@ gulp.task('minjs', function () {
 gulp.task('normaljs', function () {
 	return gulp.src('app/js/*.js')
 		.pipe(gulp.dest('dist/js'))
-		.pipe(plugins.notify({
+		/*.pipe(plugins.notify({
 			message: 'JS Uploaded in dist file'
-		}))
+		}))*/
 		.pipe(reload({ stream:true }));
 });
 
@@ -67,9 +75,9 @@ gulp.task('svg', function () {
 	return gulp.src('app/**/*.svg')
 		.pipe(plugins.svgmin())
 		.pipe(gulp.dest('./dist'))
-		.pipe(plugins.notify({
+		/*.pipe(plugins.notify({
 			message: 'SVG Minified'
-		}));
+		}));*/
 });
 
 // -- Copy / Paste HTML
@@ -77,16 +85,16 @@ gulp.task('html', function () {
 	return gulp.src('app/**/*.html')
 		.pipe(plugins.htmlclean())
 		.pipe(gulp.dest('./dist'))
-		.pipe(plugins.notify({
+		/*.pipe(plugins.notify({
 			message: 'HTML Minified'
-		}));
+		}));*/
 });
 
 // -- Browser Sync Parameters
 gulp.task('browserSync', function() {
-  plugins.browserSync.init({
-    server: {
-      baseDir: './dist'
-    },
-  })
-})
+	plugins.browserSync.init({
+		server: {
+			baseDir: './dist'
+		},
+	})
+});
