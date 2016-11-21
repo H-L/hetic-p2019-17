@@ -5,7 +5,11 @@
 //Create the renderer
 var renderer = PIXI.autoDetectRenderer(
   256, 256,
-  {antialias: false, transparent: false, resolution: 1}
+  {
+    antialias: false,
+    transparent: false,
+    resolution: 1
+  }
 );
 
 // Some styling on the renderer

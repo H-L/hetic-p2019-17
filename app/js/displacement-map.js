@@ -7,6 +7,11 @@ var options = {
 var renderer = PIXI.autoDetectRenderer(800, 600, options);
 document.body.appendChild(renderer.view);
 
+// Renderer Properties
+renderer.resize(myCanvas.parentElement.clientWidth, myCanvas.parentElement.clientHeight);
+renderer.view.style.position = "absolute";
+renderer.view.style.display = "block";
+
 // create the root of the scene graph
 var stage = new PIXI.Container();
 
@@ -26,17 +31,8 @@ stage.addChild(displacementSprite);
 
 container.filters = [displacementFilter];
 
-// RING
-var ring = PIXI.Sprite.fromImage('imgs/required/assets/ring.png');
-
-ring.anchor.set(0.5);
-
-ring.visible = false;
-
-stage.addChild(ring);
-
-// GRASS
-var bg = PIXI.Sprite.fromImage('imgs/required/assets/bkg-grass.jpg');
+// BACKGROUND
+var bg = PIXI.Sprite.fromImage('imgs/daniel.jpg');
 bg.width = renderer.width;
 bg.height = renderer.height;
 
@@ -52,6 +48,7 @@ var count = 0;
 
 animate();
 
+var test;
 
 function animate()
 {
@@ -61,7 +58,7 @@ function animate()
 
     displacementSprite.y += 6;
 
-    var test = contain(displacementSprite, container);
+    test = contain(displacementSprite, container);
 
     count += 0.05;
     renderer.render(stage);

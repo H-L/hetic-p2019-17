@@ -1,22 +1,18 @@
 {
-  "name": "siripresident",
+  "name": "hetic-p2019-17",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "## Collaborators",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-imagemin": "^3.1.1"
   },
-  "keywords": [
-    "\u001b[A\u001b[C"
-  ],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "browser-sync": "^2.17.5",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-htmlclean": "^2.7.6",
+    "gulp-imagemin": "^3.1.1",
     "gulp-load-plugins": "^1.3.0",
     "gulp-minify": "0.0.14",
     "gulp-notify": "^2.2.0",
@@ -24,10 +20,20 @@
     "gulp-postcss": "^6.2.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
-    "gulp-svgmin": "^1.2.3",
-    "node-sass": "^3.10.1"
-  },
-  "dependencies": {
+    "node-sass": "^3.10.1",
     "normalize-scss": "^6.0.0"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-L/hetic-p2019-17.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H-L/hetic-p2019-17/issues"
+  },
+  "homepage": "https://github.com/H-L/hetic-p2019-17#readme"
 }
