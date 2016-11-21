@@ -1,4 +1,10 @@
-var renderer = PIXI.autoDetectRenderer(800, 600);
+var myCanvas = document.getElementById('test');
+var options = {
+  view: myCanvas,
+  transparent: true,
+};
+
+var renderer = PIXI.autoDetectRenderer(800, 600, options);
 document.body.appendChild(renderer.view);
 
 // create the root of the scene graph
