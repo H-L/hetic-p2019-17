@@ -94,7 +94,7 @@
   margin-top:0;
   transform:rotate(-5deg);
   text-shadow:0px 0px white;
-  margin-top:-3rem;
+  margin-top:-0.5rem;
 
 }
 /* Glitch animation Artist */
@@ -147,14 +147,14 @@
   padding-bottom:2rem;
 
 }
-.presentation_title_firstPart {
+ .presentation_title_firstPart {
   width:fit-content;
   margin:auto;
   color: #fff39b;
   font-family: roboto thin;
-  font-size:3rem;
+  font-size:2rem;
   font-style:italic;
-  margin-top: -3rem;
+  margin-top: 0rem;
   text-shadow:2px 2px #f1209d;
 
 }
@@ -183,7 +183,6 @@
   margin-top:0;
   transform:rotate(-5deg);
   text-shadow:0px 0px white;
-  margin-top:-3rem;
   margin-left: 1rem;
 }
 .presentation_subtitle_container {
@@ -227,11 +226,8 @@
 .presentation_image_outflux {
   width:80%;
   display:block;
-  position:absolute;
-  top:-10rem;
-  left: 0;
   margin: auto;
-  right: 0;
+  margin-top:-15rem;
 }
 .presentation_image_influx {
   width:80%;
@@ -261,14 +257,13 @@
 }
 .presentation_background_white {
    padding-top:15%;
-   padding-bottom:50%;
+   padding-bottom:15rem;
    background:#fff1f9;
 
  }
 
 .presentation_background_purple {
   position:relative;
-  padding-top:60%;
   padding-bottom:15%;
   background: repeating-linear-gradient(
                   0deg,
@@ -297,15 +292,17 @@
 /* LOCALISATION */
 
 .footer_localisation {
-  max-width:40rem;
+  max-width:100%;
   display:block;
 }
   /* Title */
   .localisation_title__container {
-    position:absolute;
-    width:31rem;
+    width:100%;
     margin:auto;
-    height:5rem;
+    margin-top: 1.5rem;
+    margin-left: -3rem;
+    position:relative;
+    z-index:1;
 
   }
   .localisation_title__thirdPart {
@@ -316,13 +313,9 @@
     font-size:3rem;
     font-style:italic;
     margin-top:0;
-    padding-top:1.6rem;
-    position:absolute;
     transform:rotate(-5deg);
-
-    left:2rem;
-    top: -5rem;
-    text-shadow:0.5px 0.5px white;
+    text-shadow:0px 0px white;
+    margin-top:-3rem;
   }
 
 
@@ -338,6 +331,9 @@
                   #1f1c23 5px
   );
   padding-bottom:2rem;
+
+}
+.footer_subsection {
   display:flex;
   flex-direction:column;
 }
@@ -354,7 +350,7 @@
   color:#fded48;
   font-size:0.9rem;
   margin:0;
-  margin-bottom:.5rem;
+
 }
 
 .footer_adress_localisation {
@@ -369,11 +365,11 @@
 .footer_social_container {
   text-align:center;
   margin-top:2rem;
-  margin-bottom:2rem;
+
 }
 .footer_social_icons {
   width:2.5rem;
-  margin:1rem;
+  margin:1.5rem;
 
 }
 /* CGV/CONTACT */
@@ -431,7 +427,9 @@ html {
 
   }
   .presentation_subsection .presentation_image_influx {
-    width:40%;
+    height: 25rem;
+    width: auto;
+    margin-top:5rem;
   }
   .presentation_subtitle_thirdPart_left {
     margin-top:-5rem;
@@ -515,5 +513,41 @@ html {
   .arcade .presentation_title_container {
     transform: translateY(-10rem) rotate(-5deg);
     width:0%;
+  }
+  .footer_subsection {
+    flex-direction:row;
+  }
+
+  .footer_localisation{
+    order:3;
+    transform: translateX(-10rem) translateY(-5rem);
+    height: 20rem;
+
+  }
+  .footer_adress_container {
+    width: 100%;
+    z-index: 1;
+  }
+  .localisation_title__container {
+    transform:translateX(8rem);
+    margin-left:0;
+  }
+  .footer_annexe {
+    display:inline-block;
+    vertical-align:top;
+    transform:translateX(-5rem);
+
+  }
+  .footer_social_container {
+    display:inline-block;
+    transform:translateX(20rem);
+    margin-top:0;
+    width:50%;
+  }
+  .footer_annexe_exception{
+    transform:translateX(-25rem);
+  }
+  .footer_annexe p {
+    display:inline-block;
   }
 }
