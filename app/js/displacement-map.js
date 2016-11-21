@@ -1,7 +1,7 @@
 var myCanvas = document.getElementById('test');
 var options = {
   view: myCanvas,
-  transparent: true,
+  transparent: false,
 };
 
 var renderer = PIXI.autoDetectRenderer(800, 600, options);
@@ -67,9 +67,9 @@ function animate()
 
 function contain(sprite, container) {
 
-  var collision = undefined;
+  var collision;
 
-  //Bottom
+  // Bottom
   if (sprite.y + sprite.height > container.height + sprite.height) {
     sprite.y = 0 - sprite.height;
     collision = "bottom";

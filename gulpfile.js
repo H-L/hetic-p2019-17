@@ -99,4 +99,44 @@ gulp.task('browserSync', function() {
       baseDir: './dist'
     },
   })
-})
+});
+
+var sprite = require('gulp-sprite-generator'),
+    qq     = require('q');
+
+gulp.task('sprites', function() {
+    var spriteOutput;
+
+    spriteOutput = gulp.src("./app/css/*.css")
+        .pipe(sprite({
+            baseUrl:         "./",
+            spriteSheetName: "sprite.png",
+            spriteSheetPath: "/dist/imgs",
+            styleSheetName:  "sprite.css",
+
+            filter: [
+                // this is a copy of built in filter of meta skip
+                // do not forget to set it up in your stylesheets using doc block /* */
+                function(image) {
+                    return !image.meta.skip;
+                }
+            ],
+
+            groupBy: [
+                // group images by width
+                // useful when building background repeatable sprites
+                function(image) {
+                    var deferred = qq.defer();
+
+                    plugins.imageSize(image.path, function(err, size) {
+                        deferred.resolve(size.width.toString());
+                    });
+
+                    return deferred.promise;
+                }
+            ]
+        }));
+
+    spriteOutput.css.pipe(gulp.dest("./app/css"));
+    spriteOutput.img.pipe(gulp.dest("./app/imgs"));
+});
