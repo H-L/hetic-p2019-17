@@ -18,10 +18,11 @@ gulp.task('watch', ['browserSync', 'scss', 'normaljs', 'html'], function () {
 
 // -- WATCH
 // Add minjs task when JS would be ready
-gulp.task('compile', ['scss', 'normaljs', 'html'], function () {
+gulp.task('compile', ['scss', 'normaljs', 'html', /*'imagemin'*/], function () {
 	gulp.watch('app/**/*.scss', ['scss']);
 	gulp.watch('app/**/*.js', ['normaljs']);
 	gulp.watch('app/**/*.html', ['html']);
+	// gulp.watch('app/imgs/original/**/*.{jpg,png,gif,svg}', ['imagemin']);
 });
 
 // -- SCSS
@@ -70,13 +71,14 @@ gulp.task('normaljs', function () {
 		.pipe(reload({ stream:true }));
 });
 
-// -- SVG Minifier
-gulp.task('svg', function () {
-	return gulp.src('app/**/*.svg')
-		.pipe(plugins.svgmin())
-		.pipe(gulp.dest('./dist'))
+// -- IMG Minifier for PNG, JPG, GIF, SVG
+gulp.task('imagemin', function () {
+	return gulp.src('app/imgs/original/**/*.{jpg,png,gif,svg}')
+		.pipe(plugins.imagemin())
+		.pipe(gulp.dest('./dist/imgs'))
+		.pipe(gulp.dest('./app/imgs/compressed'))
 		// .pipe(plugins.notify({
-		// 	message: 'SVG Minified'
+		// 	message: 'IMG Minified'
 		// }));
 });
 
