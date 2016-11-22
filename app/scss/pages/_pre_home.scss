@@ -1,21 +1,11 @@
-/* Menu */
-.menu {
-  font-family: poppinsM;
-  font-size:20px;
-  color:white;
-  width: fit-content;
-  margin-top: 5vw;
-  margin-left: 5vh;
-  float:left;
-}
+
 /* Glitch animation Exlore */
 
 .explore_button {
 position: relative;
-font-size: 20px;
+font-size: 1.5rem;
 font-family: poppinsM;
 color: white;
-
 text-align: center;
 margin: auto;
   display:block;
@@ -53,45 +43,27 @@ animation: example-one-anim-2 2s infinite linear alternate-reverse;
 @keyframes example-one-anim-1 {
   0% {
     clip: rect(43px, 450px, 48px, 0);
-  }
-  5.88235% {
-    clip: rect(114px, 450px, 7px, 0);
-  }
-  11.76471% {
-    clip: rect(40px, 450px, 60px, 0);
-  }
-  17.64706% {
-    clip: rect(106px, 450px, 8px, 0);
-  }
-  23.52941% {
-    clip: rect(65px, 450px, 93px, 0);
-  }
-  29.41176% {
-    clip: rect(75px, 450px, 113px, 0);
-  }
-  35.29412% {
-    clip: rect(89px, 450px, 109px, 0);
-  }
-  41.17647% {
-    clip: rect(41px, 450px, 1px, 0);
-  }
-  47.05882% {
-    clip: rect(110px, 450px, 68px, 0);
+
   }
   52.94118% {
     clip: rect(102px, 450px, 86px, 0);
+
   }
   58.82353% {
     clip: rect(81px, 450px, 30px, 0);
+
   }
   64.70588% {
     clip: rect(35px, 450px, 64px, 0);
+
   }
   70.58824% {
     clip: rect(111px, 450px, 113px, 0);
+
   }
   76.47059% {
     clip: rect(42px, 450px, 19px, 0);
+
   }
   82.35294% {
     clip: rect(104px, 450px, 9px, 0);
@@ -165,8 +137,9 @@ animation: example-one-anim-2 2s infinite linear alternate-reverse;
 }
 svg {
   width: 100vw;
-  height: 70vh;
-  margin-top:10vw;
+  height: 100vh;
+  margin-bottom: -30vh;
+  margin-top: -5vh;
 }
 
 /* HOME */
@@ -189,21 +162,21 @@ svg {
 }
 
 /* ANIMATION LOGO */
-.st0 {
+.cls-2{
   fill: none;
   stroke: #E73291;
   stroke-width: 3;
   stroke-miterlimit: 10;
 }
 
-.st1 {
+.cls-3 {
   fill: none;
   stroke: #FAE849;
   stroke-width: 3;
   stroke-miterlimit: 10;
 }
 
-.st2 {
+.cls-4 {
   fill: none;
   stroke: url(#SVGID_1_);
   stroke-width: 3;
@@ -212,7 +185,7 @@ svg {
   animation: neon 25s linear infinite reverse;
 }
 
-.st3 {
+.cls-5 {
   fill: none;
   stroke: url(#SVGID_2_);
   stroke-width: 3;
@@ -237,4 +210,17 @@ svg {
   to {
     background-position: 0px 100px, 0px 100px, 0px -100px, 0 -100px;
   }
+}
+
+@include desktop {
+    html{
+      font-size: 20px;
+      line-height: 2rem;
+    }
+    svg {
+      width: 100vw;
+      height: 120vh;
+      margin-top: -10vh;
+      margin-bottom: -25vh;
+    }
 }

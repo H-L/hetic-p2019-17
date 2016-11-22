@@ -41,3 +41,18 @@ random_artist_highlight(5);
 function randomInt(min, max){
     return Math.floor(Math.random()*(max-min+1)+min);
 }
+
+
+$('.menu').on('click',function(){
+        $('.menu_list').css
+        ({
+            "top": "0",
+        });
+})
+
+$('.menu_list_exit').on('click',function() {
+    $('.menu_list').css
+    ({
+        "top" : "-110%",
+    });
+})
