@@ -37,10 +37,10 @@ gulp.task('scss', function () {
 		}))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest('dist/css'))
-		// .pipe(plugins.notify({
-		// 	message: 'SCSS Compiled'
-		// }))
-		.pipe(reload({ stream:true }));
+    .pipe(reload({ stream:true }));
+		/*.pipe(plugins.notify({
+			message: 'SCSS Compiled'
+		}))*/
 });
 
 // -- Minify JS
@@ -55,20 +55,20 @@ gulp.task('minjs', function () {
 			ignoreFiles: ['.combo.js', '-min.js']
 		}))
 		.pipe(gulp.dest('dist/js'))
-		// .pipe(plugins.notify({
-		// 	message: 'JS Uglified'
-		// }))
-		.pipe(reload({ stream:true }));
+    .pipe(reload({ stream:true }));
+		/*.pipe(plugins.notify({
+			message: 'JS Uglified'
+		}))*/
 });
 
 // -- Copy / Paste JS without Uglify
 gulp.task('normaljs', function () {
 	return gulp.src('app/js/*.js')
 		.pipe(gulp.dest('dist/js'))
+    .pipe(reload({ stream:true }));
 		// .pipe(plugins.notify({
 		// 	message: 'JS Uploaded in dist file'
 		// }))
-		.pipe(reload({ stream:true }));
 });
 
 // -- IMG Minifier for PNG, JPG, GIF, SVG
@@ -87,16 +87,16 @@ gulp.task('html', function () {
 	return gulp.src('app/**/*.html')
 		.pipe(plugins.htmlclean())
 		.pipe(gulp.dest('./dist'))
-		// .pipe(plugins.notify({
-		// 	message: 'HTML Minified'
-		// }));
+		/*.pipe(plugins.notify({
+			message: 'HTML Minified'
+		}));*/
 });
 
 // -- Browser Sync Parameters
 gulp.task('browserSync', function() {
-  plugins.browserSync.init({
-    server: {
-      baseDir: './dist'
-    },
-  })
+	plugins.browserSync.init({
+		server: {
+			baseDir: './dist'
+		},
+	})
 });
