@@ -26,13 +26,7 @@
 /*PROGRAMMATION */
 
 .section_programmation {
-  background: repeating-linear-gradient(
-                0deg,
-                #2d1351,
-                #2d1351 2px,
-                #311556 2px,
-                #311556 5px
-);
+  $gradient-purple; 
   width: 100vw;
   position: relative;
   display:flex;
@@ -588,10 +582,6 @@ svg {
   animation: neon 25s linear infinite;
 }
 
-@keyframes neon {
-  to {
-    stroke-dashoffset: 2000;
   .footer_annexe p {
     display:inline-block;
   }
-}
