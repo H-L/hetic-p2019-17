@@ -615,6 +615,50 @@ html {
   .footer_annexe_exception {
     transform: translateX(-25rem);
   }
+}
+svg {
+  width: 100vw;
+  height: 80vh;
+}
+
+/* HOME */
+
+/* ANIMATION LOGO */
+.st0 {
+  fill: none;
+  stroke: #E73291;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.st1 {
+  fill: none;
+  stroke: #FAE849;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
+.st2 {
+  fill: none;
+  stroke: url(#SVGID_1_);
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 400;
+  animation: neon 25s linear infinite reverse;
+}
+
+.st3 {
+  fill: none;
+  stroke: url(#SVGID_2_);
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 400;
+  animation: neon 25s linear infinite;
+}
+
+@keyframes neon {
+  to {
+    stroke-dashoffset: 2000;
   .footer_annexe p {
     display: inline-block;
   }
