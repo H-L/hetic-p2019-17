@@ -26,7 +26,7 @@
 /*PROGRAMMATION */
 
 .section_programmation {
-  $gradient-purple; 
+  @include gradient-purple;
   width: 100vw;
   position: relative;
   display:flex;
@@ -67,13 +67,11 @@
 .programmation_title_firstPart {
   width:fit-content;
   margin:auto;
-  color: #fff39b;
+  color: $yellow_secondary;
   font-family: roboto thin;
   font-size:3rem;
   font-style:italic;
-
-  text-shadow:2px 2px #f1209d;
-
+  text-shadow:2px 2px $pink_primary;
 }
 
 
@@ -81,7 +79,7 @@
 .programmation_title_thirdPart {
   width:fit-content;
   margin:auto;
-  color:#fe00af;
+  color:$pink_primary;
   font-family: streamster;
   font-size:3rem;
   font-style:italic;
@@ -144,12 +142,12 @@
  .presentation_title_firstPart {
   width:fit-content;
   margin:auto;
-  color: #fff39b;
+  color: $yellow_secondary;
   font-family: roboto thin;
   font-size:2rem;
   font-style:italic;
   margin-top: 0rem;
-  text-shadow:2px 2px #f1209d;
+  text-shadow:2px 2px $pink_primary;
 
 }
 
@@ -158,7 +156,7 @@
 .presentation_title_thirdPart {
   width:fit-content;
   margin:auto;
-  color:#fe00af;
+  color:$pink_primary;
   font-family: streamster;
   font-size:3rem;
   font-style:italic;
@@ -170,7 +168,7 @@
 .presentation_subtitle_thirdPart_left {
   width:fit-content;
   margin:auto;
-  color:#fe00af;
+  color:$pink_primary;
   font-family: streamster;
   font-size:3rem;
   font-style:italic;
@@ -209,10 +207,10 @@
 
 }
 .purple_text {
-  color:#2d1351;
+  color:$purple_primary;
 }
 .white_text {
-  color:#fff;
+  color:$white;
 }
 .bold_text {
   font-family:poppinsM;
@@ -231,7 +229,7 @@
 .presentation_information_annexe {
   text-transform: uppercase;
   font-family:roboto thin;
-  color:#fded48;
+  color:$yellow_primary;
   font-size:0.9rem;
 }
 
@@ -252,20 +250,14 @@
 .presentation_background_white {
    padding-top:15%;
    padding-bottom:15rem;
-   background:#fff1f9;
+   background:$white;
 
  }
 
 .presentation_background_purple {
   position:relative;
   padding-bottom:15%;
-  background: repeating-linear-gradient(
-                  0deg,
-                  #2d1351,
-                  #2d1351 2px,
-                  #311556 2px,
-                  #311556 5px
-  );
+  @include gradient-purple;
   display:flex;
   flex-direction:column;
 }
@@ -273,13 +265,7 @@
   position:relative;
   padding-top:2.5rem;
   padding-bottom:2.5rem;
-  background: repeating-linear-gradient(
-                  0deg,
-                  #2d1351,
-                  #2d1351 2px,
-                  #311556 2px,
-                  #311556 5px
-  );
+  @include gradient-purple;
   display:flex;
   flex-direction:column;
 }
@@ -302,7 +288,7 @@
   .localisation_title__thirdPart {
     width:fit-content;
     margin:auto;
-    color:#fe00af;
+    color:$pink_primary;
     font-family: streamster;
     font-size:3rem;
     font-style:italic;
@@ -316,14 +302,7 @@
 
 .footer_container {
   position:relative;
-
-  background: repeating-linear-gradient(
-                  0deg,
-                  #1d1a21,
-                  #1d1a21 2px,
-                  #1f1c23 2px,
-                  #1f1c23 5px
-  );
+  @include gradient-black;
   padding-bottom:2rem;
 
 }
@@ -341,7 +320,7 @@
 .footer_adress_name {
   text-transform: uppercase;
   font-family:roboto thin;
-  color:#fded48;
+  color:$yellow_primary;
   font-size:0.9rem;
   margin:0;
 
@@ -350,7 +329,7 @@
 .footer_adress_localisation {
   font-family:roboto light;
   font-size:0.9rem;
-  color:#fff;
+  color:$white;
   margin:0;
 
 
@@ -370,7 +349,7 @@
 .footer_annexe {
   text-align:center;
   text-transform: uppercase;
-  color:#fff;
+  color:$white;
   font-family: roboto thin;
   font-size:0.8rem;
 }
@@ -552,14 +531,14 @@ svg {
 /* ANIMATION LOGO */
 .st0 {
   fill: none;
-  stroke: #E73291;
+  stroke: $pink_primary;
   stroke-width: 3;
   stroke-miterlimit: 10;
 }
 
 .st1 {
   fill: none;
-  stroke: #FAE849;
+  stroke: $yellow_primary;
   stroke-width: 3;
   stroke-miterlimit: 10;
 }
