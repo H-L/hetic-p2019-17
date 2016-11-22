@@ -27,8 +27,9 @@
 
 svg {
   width: 100vw;
-  height: 70vh;
-  margin-top:10vw;
+  height: 100vh;
+  margin-bottom: -30vh;
+  margin-top: -5vh;
 }
 
 /* HOME */
@@ -44,21 +45,21 @@ svg {
 }
 
 /* ANIMATION LOGO */
-.st0 {
+.cls-2{
   fill: none;
   stroke: $pink_primary;
   stroke-width: 3;
   stroke-miterlimit: 10;
 }
 
-.st1 {
+.cls-3 {
   fill: none;
   stroke: $yellow_primary;
   stroke-width: 3;
   stroke-miterlimit: 10;
 }
 
-.st2 {
+.cls-4 {
   fill: none;
   stroke: url(#SVGID_1_);
   stroke-width: 3;
@@ -67,7 +68,7 @@ svg {
   animation: neon 25s linear infinite reverse;
 }
 
-.st3 {
+.cls-5 {
   fill: none;
   stroke: url(#SVGID_2_);
   stroke-width: 3;
@@ -92,4 +93,17 @@ svg {
   to {
     background-position: 0px 100px, 0px 100px, 0px -100px, 0 -100px;
   }
+}
+
+@include desktop {
+    html{
+      font-size: 20px;
+      line-height: 2rem;
+    }
+    svg {
+      width: 100vw;
+      height: 120vh;
+      margin-top: -10vh;
+      margin-bottom: -25vh;
+    }
 }
