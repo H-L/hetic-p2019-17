@@ -1,0 +1,14 @@
+/* ADD TRAME BACKGROUND */
+.section_home, .sliders {
+
+  background: repeating-linear-gradient(
+      0deg,
+      #2b134b,
+      #2b134b 5px,
+      #311556 5px,
+      #311556 10px
+  );
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
