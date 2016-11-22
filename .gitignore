@@ -13,7 +13,7 @@ composer.phar
 *.codekit
 *.pdf
 .idea/
-dist/
+dist
 node_modules
 exdist/
 
