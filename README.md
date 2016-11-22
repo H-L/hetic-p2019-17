@@ -10,6 +10,36 @@ This project is created by :
 - Brandon Collen
 - Louis Rialland
 
+## Installation
+
+First download our repository with :
+
+` git clone git@github.com:H-L/hetic-p2019-17.git `
+
+Then enter in the root of the repo and install all node modules :
+
+```
+cd hetic-p2019-17
+npm install
+```
+
+## Gulp Tasks
+
+We are using gulp to compile SCSS files and do other stuff.
+Here is a [complete guide](http://gulpjs.org/) to install and use it.
+
+`gulp watch`
+
+Watching files with autoreload in browsersync.
+
+`gulp compile`
+
+Watching files without autoreload and browsersync.
+
+`gulp imagemin`
+
+Minifying images for production
+
 ## Gitignore(s)
 
 The project has multiple `gitignore` files. It allows more flexibility throught projects when setting up the repo. (And yes you can add multiple `gitignore`. Plus you can add something at the beginning of its name. Isn't it beautiful ? :octocat: )
