@@ -1,24 +1,18 @@
-.body--wrap{
+.sliders{
+  min-width: 100vw;
   color: $white;
   font-family: roboto thin;
-  @include gradient-purple;
-  height: 100vh;
-  width: 100vw;
-}
-
-.sliders{
   overflow-y: hidden;
-  position: relative;
-  width: 100vw;
-  height: 60vh;
+  @include gradient-purple;
 }
 
 .slider{
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  width: 60vw;
-  height: 60vh;
+  max-height: 100vh;
+  width: auto;
+  overflow: hidden;
 
   &--cross{
     position: absolute;
@@ -27,20 +21,6 @@
     z-index: 10;
     padding: 1rem;
   }
-}
-
-.slider__artist{
-  position: relative;
-  min-height: 100%;
-  min-width: 100%;
-  margin: 0 .5rem;
-  overflow: hidden;
-  text-align: center;
-
-  &:first-child{
-    margin-left: 0rem;
-  }
-
   // Border with gradients
   &:before{
     content: '';
@@ -48,33 +28,46 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     border: 5px solid transparent;
     border-image: linear-gradient(to bottom, $yellow_primary 0%, $pink_primary 100%);
     border-image-slice: 1;
     z-index: 9;
     pointer-events: none;
   }
+}
 
-  &--content{
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+.slider__artist{
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  // Opacity filter on slider
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $black_primary;
+    height: 100vh;
+    width: 100vw;
+    opacity: .5;
   }
 
   & img{
-    height: 100%;
+    max-height: 100vh;
   }
   &--infos{
     height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
 
     & h2{
       font-family: poppinsM;
@@ -111,12 +104,10 @@
   }
 }
 
-.slider--scale{
-  transform: scale(.8);
+.slider__artist--1, .slider__artist--2, .slider__artist--3{
+  display: none;
 }
 
-.item--hidden{
-  display: none;
-  visibility: hidden;
-  opacity: 0;
+.slider--scale{
+  transform: scale(.8);
 }
