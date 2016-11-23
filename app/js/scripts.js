@@ -117,24 +117,27 @@ window.setInterval(function(){
 /* SWITCH PAGE INFOS */
 
 $('.infos_switcher_button').on('click',function() {
-    $(this).css ({
-        'opacity' : 0,
 
-    });
-    $(this).siblings().css ({
-        'opacity' : 1,
 
-    });
-    var save_visible = $('.infos_switch_visible');
-    $('.infos_switch_hide').each(function () {
-        $(this).removeClass("infos_switch_hide");
-        $(this).addClass("infos_switch_visible");
 
-    });
-    save_visible.each(function () {
-        $(this).removeClass("infos_switch_visible");
-        $(this).addClass("infos_switch_hide");
+        if($(this).html()=="+ où dormir ?") {
+            $(this).html("+ où c'est ? ");
+        }
+        else {
+            $(this).html("+ où dormir ?");
+        }
+        var save_visible = $('.infos_switch_visible');
+        $('.infos_switch_hide').each(function () {
+            $(this).removeClass("infos_switch_hide");
+            $(this).addClass("infos_switch_visible");
 
-    });
+        });
+        save_visible.each(function () {
+            $(this).removeClass("infos_switch_visible");
+            $(this).addClass("infos_switch_hide");
+
+        });
+      
+
 
 });
