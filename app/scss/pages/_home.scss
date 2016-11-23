@@ -65,13 +65,7 @@
 }
 .menu_list {
   width : 100vw;
-  background: repeating-linear-gradient(
-                  0deg,
-                  #2d1351,
-                  #2d1351 2px,
-                  #311556 2px,
-                  #311556 5px
-  );
+  @include gradient-purple;
   padding: 0;
   color: white;
   text-align: center;
@@ -105,13 +99,7 @@
 .menu_background {
   position: fixed;
   z-index: 9;
-  background: repeating-linear-gradient(
-                  0deg,
-                  #2d1351,
-                  #2d1351 2px,
-                  #311556 2px,
-                  #311556 5px
-  );
+  @include gradient-purple;
   width: 100%;
   height: 4rem;
 }
@@ -130,13 +118,7 @@
 /*PROGRAMMATION */
 
 .section_programmation {
-  background: repeating-linear-gradient(
-                  0deg,
-                  #2d1351,
-                  #2d1351 2px,
-                  #311556 2px,
-                  #311556 5px
-  );
+  @include gradient-purple;
   width: 100vw;
   position: relative;
   display: flex;
@@ -177,21 +159,19 @@
 }
 
 .programmation_title_firstPart {
-  width: fit-content;
-  margin: auto;
-  color: #fff39b;
+  width:fit-content;
+  margin:auto;
+  color: $yellow_secondary;
   font-family: roboto thin;
-  font-size: 3rem;
-  font-style: italic;
-
-  text-shadow: 2px 2px #f1209d;
-
+  font-size:3rem;
+  font-style:italic;
+  text-shadow:2px 2px $pink_primary;
 }
 
 .programmation_title_thirdPart {
-  width: fit-content;
-  margin: auto;
-  color: #fe00af;
+  width:fit-content;
+  margin:auto;
+  color:$pink_primary;
   font-family: streamster;
   font-size: 3rem;
   font-style: italic;
@@ -213,7 +193,6 @@
   width: 200%;
   height: 100%;
   font-size:1.2em;
-
 }
 
 .programmation_artist.changed::before {
@@ -250,23 +229,21 @@
   padding-bottom: 2rem;
 
 }
-
-.presentation_title_firstPart {
-  width: fit-content;
-  margin: auto;
-  color: #fff39b;
+ .presentation_title_firstPart {
+  width:fit-content;
+  margin:auto;
+  color: $yellow_secondary;
   font-family: roboto thin;
   font-size: 2rem;
   font-style: italic;
   margin-top: 0rem;
-  text-shadow: 2px 2px #f1209d;
-
+  text-shadow:2px 2px $pink_primary;
 }
 
 .presentation_title_thirdPart {
-  width: fit-content;
-  margin: auto;
-  color: #fe00af;
+  width:fit-content;
+  margin:auto;
+  color:$pink_primary;
   font-family: streamster;
   font-size: 3rem;
   font-style: italic;
@@ -277,9 +254,9 @@
 }
 
 .presentation_subtitle_thirdPart_left {
-  width: fit-content;
-  margin: auto;
-  color: #fe00af;
+  width:fit-content;
+  margin:auto;
+  color:$pink_primary;
   font-family: streamster;
   font-size: 3rem;
   font-style: italic;
@@ -322,11 +299,11 @@
 }
 
 .purple_text {
-  color: #2d1351;
+  color:$purple_primary;
 }
 
 .white_text {
-  color: #fff;
+  color:$white;
 }
 
 .bold_text {
@@ -348,9 +325,9 @@
 
 .presentation_information_annexe {
   text-transform: uppercase;
-  font-family: roboto thin;
-  color: #fded48;
-  font-size: 0.9rem;
+  font-family:roboto thin;
+  color:$yellow_primary;
+  font-size:0.9rem;
 }
 
 .learn_more {
@@ -371,39 +348,26 @@
 }
 
 .presentation_background_white {
-  padding-top: 15%;
-  padding-bottom: 15rem;
-  background: #fff1f9;
-
+   padding-top:15%;
+   padding-bottom:15rem;
+   background:$white;
 }
 
 .presentation_background_purple {
-  position: relative;
-  padding-bottom: 15%;
-  background: repeating-linear-gradient(
-                  0deg,
-                  #2d1351,
-                  #2d1351 2px,
-                  #311556 2px,
-                  #311556 5px
-  );
-  display: flex;
-  flex-direction: column;
+  position:relative;
+  padding-bottom:15%;
+  @include gradient-purple;
+  display:flex;
+  flex-direction:column;
 }
 
 .presentation_background_purple_exception {
-  position: relative;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  background: repeating-linear-gradient(
-                  0deg,
-                  #2d1351,
-                  #2d1351 2px,
-                  #311556 2px,
-                  #311556 5px
-  );
-  display: flex;
-  flex-direction: column;
+  position:relative;
+  padding-top:2.5rem;
+  padding-bottom:2.5rem;
+  @include gradient-purple;
+  display:flex;
+  flex-direction:column;
 }
 
 /* LOCALISATION */
@@ -411,6 +375,20 @@
 .footer_localisation {
   max-width: 100%;
   display: block;
+}
+
+
+.localisation_title__thirdPart {
+  width:fit-content;
+  margin:auto;
+  color:$pink_primary;
+  font-family: streamster;
+  font-size:3rem;
+  font-style:italic;
+  margin-top:0;
+  transform:rotate(-5deg);
+  text-shadow:0px 0px white;
+  margin-top:-3rem;
 }
 
 /* Title */
@@ -421,34 +399,12 @@
   margin-left: -3rem;
   position: relative;
   z-index: 1;
-
-}
-
-.localisation_title__thirdPart {
-  width: fit-content;
-  margin: auto;
-  color: #fe00af;
-  font-family: streamster;
-  font-size: 3rem;
-  font-style: italic;
-  margin-top: 0;
-  transform: rotate(-5deg);
-  text-shadow: 0px 0px white;
-  margin-top: -3rem;
 }
 
 .footer_container {
-  position: relative;
-
-  background: repeating-linear-gradient(
-                  0deg,
-                  #1d1a21,
-                  #1d1a21 2px,
-                  #1f1c23 2px,
-                  #1f1c23 5px
-  );
-  padding-bottom: 2rem;
-
+  position:relative;
+  @include gradient-black;
+  padding-bottom:2rem;
 }
 
 .footer_subsection {
@@ -465,19 +421,17 @@
 
 .footer_adress_name {
   text-transform: uppercase;
-  font-family: roboto thin;
-  color: #fded48;
-  font-size: 0.9rem;
-  margin: 0;
-
+  font-family:roboto thin;
+  color:$yellow_primary;
+  font-size:0.9rem;
+  margin:0;
 }
 
 .footer_adress_localisation {
-  font-family: roboto light;
-  font-size: 0.9rem;
-  color: #fff;
-  margin: 0;
-
+  font-family:roboto light;
+  font-size:0.9rem;
+  color:$white;
+  margin:0;
 }
 
 /* Social Button */
@@ -497,7 +451,7 @@
 .footer_annexe {
   text-align: center;
   text-transform: uppercase;
-  color: #fff;
+  color:$white;
   font-family: roboto thin;
   font-size: 0.8rem;
 }
@@ -668,18 +622,12 @@ html {
   .footer_annexe_exception {
     transform: translateX(-25rem);
   }
-  .footer_annexe p {
+
+} /* End desktop */
+
+.footer_annexe p {
     display: inline-block;
-  }
-  .menu_background {
-    display:none;
-  }
-  .explore_button {
-    position: absolute;
-    width: fit-content;
-    left: 0;
-    right: 0;
-  }
 }
-
-
+.menu_background {
+    display:none;
+}
