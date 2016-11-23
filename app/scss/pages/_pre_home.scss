@@ -1,3 +1,4 @@
+
 /* Menu */
 .menu {
   font-family: poppinsM;
@@ -40,12 +41,12 @@ svg {
   width: 100vw;
   height: 100vh;
   position: relative;
-  animation:10s focus linear infinite alternate;
+  animation: 10s focus linear infinite alternate;
 
 }
 
 /* ANIMATION LOGO */
-.cls-2{
+.cls-2 {
   fill: none;
   stroke: $pink_primary;
   stroke-width: 3;
@@ -83,7 +84,6 @@ svg {
   }
 }
 
-
 /* BACKGROUND animation */
 
 @keyframes focus {
@@ -96,14 +96,14 @@ svg {
 }
 
 @include desktop {
-    html{
-      font-size: 20px;
-      line-height: 2rem;
-    }
-    svg {
-      width: 100vw;
-      height: 120vh;
-      margin-top: -10vh;
-      margin-bottom: -25vh;
-    }
+  html {
+    font-size: 20px;
+    line-height: 2rem;
+  }
+  svg {
+    width: 100vw;
+    height: 100vh;
+
+    margin-bottom: -25vh;
+  }
 }
