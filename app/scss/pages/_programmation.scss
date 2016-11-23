@@ -4,6 +4,7 @@
   @include gradient-purple;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .sliders{
@@ -19,6 +20,7 @@
   box-sizing: border-box;
   width: 60vw;
   height: 60vh;
+  margin: 0 auto;
 
   &--cross{
     position: absolute;
@@ -33,12 +35,18 @@
   position: relative;
   min-height: 100%;
   min-width: 100%;
-  margin: 0 .5rem;
   overflow: hidden;
   text-align: center;
 
-  &:first-child{
-    margin-left: 0rem;
+  // Hide all
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+
+  &.slide--active{
+    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   // Border with gradients
@@ -119,4 +127,40 @@
   display: none;
   visibility: hidden;
   opacity: 0;
+}
+
+.sliders__menu{
+  width: 100%;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: poppinsM;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+
+  &--button{
+    display: inline-block;
+  }
+}
+
+.selected{
+  color: $yellow_primary;
+  @include glitch-text;
+}
+
+.chevron{
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+
+  &--left{
+    left: 1.5rem;
+  }
+  &--right{
+    bottom: 0;
+    right: 1.5rem;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 }
