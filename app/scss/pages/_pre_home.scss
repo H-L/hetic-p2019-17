@@ -1,45 +1,45 @@
-
 /* Glitch animation Exlore */
 
 .explore_button {
-position: relative;
-font-size: 1.5rem;
-font-family: poppinsM;
-color: white;
-text-align: center;
-margin: auto;
-  display:block;
-cursor: pointer;
-  text-decoration:none;
+  position: relative;
+  font-size: 1.5rem;
+  font-family: poppinsM;
+  color: white;
+  text-align: center;
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .explore_button::before,
 .explore_button::after {
-content: attr(data-text);
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .explore_button::before {
-/* variation */
-left: 2px;
-text-shadow: -1px 0px red;
+  /* variation */
+  left: 2px;
+  text-shadow: -1px 0px red;
 
-/* call animation */
-animation: example-one-anim-1 2s infinite linear alternate-reverse;
+  /* call animation */
+  animation: example-one-anim-1 2s infinite linear alternate-reverse;
 }
 
 .explore_button::after {
-/* variation */
-left: -2px;
-text-shadow: -1px 0 blue;
+  /* variation */
+  left: -2px;
+  text-shadow: -1px 0 blue;
 
-/* call animation */
-animation: example-one-anim-2 2s infinite linear alternate-reverse;
+  /* call animation */
+  animation: example-one-anim-2 2s infinite linear alternate-reverse;
 }
+
 @keyframes example-one-anim-1 {
   0% {
     clip: rect(43px, 450px, 48px, 0);
@@ -135,6 +135,7 @@ animation: example-one-anim-2 2s infinite linear alternate-reverse;
     clip: rect(1px, 450px, 113px, 0);
   }
 }
+
 svg {
   width: 100vw;
   height: 100vh;
@@ -157,12 +158,12 @@ svg {
   width: 100vw;
   height: 100vh;
   position: relative;
-  animation:10s focus linear infinite alternate;
+  animation: 10s focus linear infinite alternate;
 
 }
 
 /* ANIMATION LOGO */
-.cls-2{
+.cls-2 {
   fill: none;
   stroke: #E73291;
   stroke-width: 3;
@@ -200,7 +201,6 @@ svg {
   }
 }
 
-
 /* BACKGROUND animation */
 
 @keyframes focus {
@@ -213,14 +213,14 @@ svg {
 }
 
 @include desktop {
-    html{
-      font-size: 20px;
-      line-height: 2rem;
-    }
-    svg {
-      width: 100vw;
-      height: 120vh;
-      margin-top: -10vh;
-      margin-bottom: -25vh;
-    }
+  html {
+    font-size: 20px;
+    line-height: 2rem;
+  }
+  svg {
+    width: 100vw;
+    height: 100vh;
+
+    margin-bottom: -25vh;
+  }
 }
