@@ -15,7 +15,7 @@ function random_artist_highlight(timer) {
         var artist_image_element=$('.image_artist').last();
             console.log(artist_image_element);
         $(artist_image_element).css({
-            'top': randomInt(0, $(".section_programmation").height()/2) + 'px',
+            'top': randomInt(0, $(".section_programmation").height()/2.5) + 'px',
             'left': randomInt(0, $(".section_programmation").width()/2) + 'px',
             'transition' : '0.5s ease-in',
             'transform' : 'scale(1.5,1.5)',

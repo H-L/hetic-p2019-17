@@ -328,6 +328,7 @@
   font-family:roboto thin;
   color:$yellow_primary;
   font-size:0.9rem;
+  font-weight:bold;
 }
 
 .learn_more {
@@ -350,7 +351,7 @@
 .presentation_background_white {
    padding-top:15%;
    padding-bottom:15rem;
-   background:$white;
+   background:$white_pinky;
 }
 
 .presentation_background_purple {
@@ -359,6 +360,7 @@
   @include gradient-purple;
   display:flex;
   flex-direction:column;
+  animation: 10s focus linear infinite alternate;
 }
 
 .presentation_background_purple_exception {
@@ -368,6 +370,7 @@
   @include gradient-purple;
   display:flex;
   flex-direction:column;
+  animation: 10s focus linear infinite alternate;
 }
 
 /* LOCALISATION */
@@ -376,7 +379,10 @@
   max-width: 100%;
   display: block;
 }
-
+.footer_annexe a {
+  text-decoration:none;
+  color:$white;
+}
 
 .localisation_title__thirdPart {
   width:fit-content;
@@ -405,6 +411,7 @@
   position:relative;
   @include gradient-black;
   padding-bottom:2rem;
+  animation: 10s focus linear infinite alternate;
 }
 
 .footer_subsection {
@@ -622,7 +629,16 @@ html {
   .footer_annexe_exception {
     transform: translateX(-25rem);
   }
-
+  .programmation_artist.changed::before,
+  .programmation_artist.changed::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 200%;
+    height: 100%;
+    font-size:1.2em;
+  }
 } /* End desktop */
 
 .footer_annexe p {
