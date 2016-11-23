@@ -1,9 +1,9 @@
 .sliders{
   min-width: 100vw;
-  @include gradient-purple;
   color: $white;
   font-family: roboto thin;
   overflow-y: hidden;
+  @include gradient-purple;
 }
 
 .slider{
@@ -36,6 +36,11 @@
     position: absolute;
     top: 0;
     left: 0;
+
+    & h2{
+      font-family: poppinsM;
+      @include glitch-text;
+    }
   }
   &--date{
     & h3{
