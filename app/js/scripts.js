@@ -3,7 +3,6 @@ function random_artist_highlight(timer) {
         if ($('.changed').length) {
             $('.image_artist').last().remove();
             $('.changed').removeClass("changed");
-
         }
         var tableau = $('.programmation_container').children().toArray();
 
@@ -20,19 +19,10 @@ function random_artist_highlight(timer) {
             'transition' : '0.5s ease-in',
             'transform' : 'scale(1.5,1.5)',
             'opacity' :'0.4',
-
-
-
         });
-
-
-
 
         $(tableau[random]).addClass("changed");
     }, timer * 1000);
-
-
-
 }
 
 random_artist_highlight(5);
@@ -41,24 +31,6 @@ random_artist_highlight(5);
 function randomInt(min, max){
     return Math.floor(Math.random()*(max-min+1)+min);
 }
-
-
-$('.menu').on('click',function(){
-
-        $('.menu_list').css
-        ({
-            "top": "0",
-        });
-})
-
-$('.menu_list_exit').on('click',function() {
-    $('.menu_list').css
-    ({
-        "top" : "-110%",
-    });
-});
-
-
 
 /*Animation Sound*/
 var random_musique=[

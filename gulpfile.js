@@ -76,7 +76,7 @@ gulp.task('imagemin', function () {
 	return gulp.src('app/imgs/original/**/*.{jpg,png,gif,svg}')
 		.pipe(plugins.imagemin())
 		.pipe(gulp.dest('./dist/imgs'))
-		.pipe(gulp.dest('./app/imgs/compressed'))
+		.pipe(gulp.dest('./app/imgs/compressed'));
 		// .pipe(plugins.notify({
 		// 	message: 'IMG Minified'
 		// }));
@@ -86,7 +86,7 @@ gulp.task('imagemin', function () {
 gulp.task('html', function () {
 	return gulp.src('app/**/*.html')
 		.pipe(plugins.htmlclean())
-		.pipe(gulp.dest('./dist'))
+		.pipe(gulp.dest('./dist'));
 		/*.pipe(plugins.notify({
 			message: 'HTML Minified'
 		}));*/
@@ -98,5 +98,5 @@ gulp.task('browserSync', function() {
 		server: {
 			baseDir: './dist'
 		},
-	})
+	});
 });

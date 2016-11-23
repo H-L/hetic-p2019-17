@@ -1,26 +1,18 @@
-.body--wrap{
+.sliders{
+  min-width: 100vw;
   color: $white;
   font-family: roboto thin;
-  @include gradient-purple;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
-
-.sliders{
   overflow-y: hidden;
-  position: relative;
-  width: 100vw;
-  height: 60vh;
+  @include gradient-purple;
 }
 
 .slider{
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  width: 60vw;
-  height: 60vh;
-  margin: 0 auto;
+  max-height: 100vh;
+  width: auto;
+  overflow: hidden;
 
   &--cross{
     position: absolute;
@@ -28,6 +20,21 @@
     left: 0;
     z-index: 10;
     padding: 1rem;
+  }
+  // Border with gradients
+  &:before{
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom, $yellow_primary 0%, $pink_primary 100%);
+    border-image-slice: 1;
+    z-index: 9;
+    pointer-events: none;
   }
 }
 
@@ -38,51 +45,29 @@
   overflow: hidden;
   text-align: center;
 
-  // Hide all
-  display: none;
-  visibility: hidden;
-  opacity: 0;
-
-  &.slide--active{
-    display: block;
-    visibility: visible;
-    opacity: 1;
-  }
-
-  // Border with gradients
+  // Opacity filter on slider
   &:before{
     content: '';
-    box-sizing: border-box;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
-    border: 5px solid transparent;
-    border-image: linear-gradient(to bottom, $yellow_primary 0%, $pink_primary 100%);
-    border-image-slice: 1;
-    z-index: 9;
-    pointer-events: none;
-  }
-
-  &--content{
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+    background: $black_primary;
+    height: 100vh;
+    width: 100vw;
+    opacity: .5;
   }
 
   & img{
-    height: 100%;
+    max-height: 100vh;
   }
   &--infos{
     height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
 
     & h2{
       font-family: poppinsM;
@@ -119,48 +104,10 @@
   }
 }
 
+.slider__artist--1, .slider__artist--2, .slider__artist--3{
+  display: none;
+}
+
 .slider--scale{
   transform: scale(.8);
-}
-
-.item--hidden{
-  display: none;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.sliders__menu{
-  width: 100%;
-  padding: 0;
-  text-transform: uppercase;
-  font-family: poppinsM;
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-
-  &--button{
-    display: inline-block;
-  }
-}
-
-.selected{
-  color: $yellow_primary;
-  @include glitch-text;
-}
-
-.chevron{
-  display: flex;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-
-  &--left{
-    left: 1.5rem;
-  }
-  &--right{
-    bottom: 0;
-    right: 1.5rem;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
 }
