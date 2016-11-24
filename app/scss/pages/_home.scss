@@ -275,7 +275,7 @@
 }
 
 .vjing .presentation_title_container {
-  width: 0%;
+  width: 80%;
   margin: 0;
 }
 
@@ -314,13 +314,14 @@
   width: 80%;
   display: block;
   margin: auto;
-  margin-top: -15rem;
+
 }
 
 .presentation_image_influx {
   width: 80%;
   margin: auto;
   display: block;
+  position:relative;
 }
 
 .presentation_information_annexe {
@@ -335,7 +336,12 @@
   margin-bottom: 10%;
   display: block;
 }
-
+.vjing {
+  transform:translateY(-15rem);
+}
+.presentation_subsection_reverse.arcade {
+  margin-top:-15rem;
+}
 .presentation_subsection_reverse {
   display: flex;
   flex-direction: column;
@@ -511,6 +517,7 @@ html {
   .presentation_subsection .presentation_image_influx {
     height: 25rem;
     width: auto;
+    transform:translateX(-5rem) translateY(-2rem);
     margin-top: 5rem;
   }
   .presentation_subtitle_thirdPart_left {
@@ -545,8 +552,10 @@ html {
     padding-top: 12rem;
   }
   .presentation_subsection_reverse .presentation_image_influx {
-    width: 45%;
-    transform: translateY(5rem);
+    height:25rem;
+    width:auto;
+    order:3;
+    transform: translateY(2rem) translateX(-5rem);
   }
   .presentation_background_purple_exception {
     padding-bottom: 0rem;
@@ -568,6 +577,14 @@ html {
     margin-top: -5rem;
     width: auto;
   }
+  .vjing .presentation_image_outflux {
+    width: auto;
+    height: 30rem;
+    margin: 0;
+    margin-left: 4rem;
+    margin-right: 0rem;
+  }
+
   .presentation_background_white {
     padding-bottom: 15%;
     padding-top: 20%;
@@ -578,6 +595,7 @@ html {
   .vjing .presentation_title_thirdPart {
     margin-top: 3rem;
     margin-left: -2rem;
+    float: right;
   }
 
   .vjing .presentation_text {
@@ -585,12 +603,20 @@ html {
   }
   .arcade {
     width: 60%;
+    transform:translateX(-8rem);
+  }
+  .presentation_subsection_reverse.arcade {
+    margin-top:0;
+  }
+  .vjing {
+    transform:none;
   }
   .arcade .presentation_image_influx {
     width: auto;
     height: 30rem;
     margin: 0;
-    margin-right: -3.8rem;
+    margin-left: 4rem;
+    margin-right: 0rem;
   }
   .arcade .presentation_title_container {
     transform: translateY(-10rem) rotate(-5deg);

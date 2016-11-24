@@ -1,49 +1,10 @@
-.glitched-img{
-  position: relative;
+.example-three img{
+
+    max-height: 500px;
+    width:100%;
 }
 
-.sprite {
-    background-image: url(../imgs/spritesheet.png);
-    background-repeat: no-repeat;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.sprite-1 {
-    width: 419px;
-    height: 600px;
-    background-position: -5px -5px;
-    opacity: 1;
-}
-
-.sprite-2 {
-    width: 419px;
-    height: 600px;
-    background-position: -434px -5px;
-}
-
-.sprite-3 {
-    width: 419px;
-    height: 600px;
-    background-position: -863px -5px;
-}
-
-.sprite-4 {
-    width: 419px;
-    height: 600px;
-    background-position: -5px -615px;
-}
-
-.sprite-5 {
-    width: 419px;
-    height: 600px;
-    background-position: -434px -615px;
-}
-
-.hidden-sprite{
-  display: none;
-  opacity: 0;
-  visibility: hidden;
+.example-three{
+    @include imgGlitch("image", 15, 610, 788, 200, 75);
+    height:25rem;
 }

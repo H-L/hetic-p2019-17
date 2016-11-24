@@ -137,7 +137,7 @@ $('.infos_switcher_button').on('click',function() {
             $(this).addClass("infos_switch_hide");
 
         });
-      
+
 
 
 });

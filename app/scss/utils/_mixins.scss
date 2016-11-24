@@ -32,125 +32,151 @@ $desktop-width: 1024px;
     animation: example-one-anim-1 2s infinite linear alternate-reverse;
   }
   &:after {
-  /* variation */
-  left: -2px;
-  text-shadow: -1px 0 blue;
+    /* variation */
+    left: -2px;
+    text-shadow: -1px 0 blue;
 
-  /* call animation */
-  animation: example-one-anim-2 2s infinite linear alternate-reverse;
+    /* call animation */
+    animation: example-one-anim-2 2s infinite linear alternate-reverse;
   }
 }
 
-@keyframes example-one-anim-1 {
-  0% {
-    clip: rect(43px, 450px, 48px, 0);
+@mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height) {
+
+  color: $textColor;
+  position: relative;
+  $steps: $intensity;
+
+  // Ensure the @keyframes are generated at the root level
+  @at-root {
+    // We need two different ones
+    @for $i from 1 through 2 {
+      @keyframes #{$name}-anim-#{$i} {
+        @for $i from 0 through $steps {
+          #{percentage($i*(1/$steps))} {
+            clip: rect(
+                            random($height)+px,
+                            $width+px,
+                            random($height)+px,
+                            0
+            );
+          }
+        }
+      }
+    }
   }
-  5.88235% {
-    clip: rect(114px, 450px, 7px, 0);
+  &:before,
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $background;
+    clip: rect(0, 0, 0, 0);
   }
-  11.76471% {
-    clip: rect(40px, 450px, 60px, 0);
+  &:after {
+    left: 2px;
+    text-shadow: -1px 0 $highlightColor1;
+    animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
   }
-  17.64706% {
-    clip: rect(106px, 450px, 8px, 0);
+  &:before {
+    left: -2px;
+    text-shadow: 2px 0 $highlightColor2;
+    animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
   }
-  23.52941% {
-    clip: rect(65px, 450px, 93px, 0);
+
+}
+
+
+@mixin imgGlitch($name, $intensity, $width, $height, $top, $left) {
+
+  $steps: $intensity;
+
+  // Ensure the @keyframes are generated at the root level
+  @at-root {
+    // We need two different ones
+    @for $i from 1 through 2 {
+      @keyframes #{$name}-anim-#{$i} {
+        @for $i from 0 through $steps {
+          #{percentage($i*(1/$steps))} {
+            clip: rect(
+                            random($height)+px,
+                            $width+px,
+                            random($height)+px,
+                            0
+            );
+          }
+        }
+      }
+    }
   }
-  29.41176% {
-    clip: rect(75px, 450px, 113px, 0);
+
+  > img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
   }
-  35.29412% {
-    clip: rect(89px, 450px, 109px, 0);
+  > img:nth-child(2),
+  > img:nth-child(3){
+    clip: rect(0, 0, 0, 0);
   }
-  41.17647% {
-    clip: rect(41px, 450px, 1px, 0);
+  > img:nth-child(2) {
+    left: -5px;
+    animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
   }
-  47.05882% {
-    clip: rect(110px, 450px, 68px, 0);
-  }
-  52.94118% {
-    clip: rect(102px, 450px, 86px, 0);
-  }
-  58.82353% {
-    clip: rect(81px, 450px, 30px, 0);
-  }
-  64.70588% {
-    clip: rect(35px, 450px, 64px, 0);
-  }
-  70.58824% {
-    clip: rect(111px, 450px, 113px, 0);
-  }
-  76.47059% {
-    clip: rect(42px, 450px, 19px, 0);
-  }
-  82.35294% {
-    clip: rect(104px, 450px, 9px, 0);
-  }
-  88.23529% {
-    clip: rect(7px, 450px, 90px, 0);
-  }
-  94.11765% {
-    clip: rect(72px, 450px, 57px, 0);
-  }
-  100% {
-    clip: rect(109px, 450px, 7px, 0);
+  > img:nth-child(3) {
+    left: 5px;
+    animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
   }
 }
 
-@keyframes example-one-anim-2 {
-  0% {
-    clip: rect(53px, 450px, 34px, 0);
+
+
+@mixin svgGlitch($name, $intensity, $fillColor, $background, $fillHighlight1, $fillHighlight2, $width, $height, $top, $left) {
+
+  $steps: $intensity;
+
+  // Ensure the @keyframes are generated at the root level
+  @at-root {
+    // We need two different ones
+    @for $i from 1 through 2 {
+      @keyframes #{$name}-anim-#{$i} {
+        @for $i from 0 through $steps {
+          #{percentage($i*(1/$steps))} {
+            clip: rect(
+                            (random($height)-20)+px,
+                            $width+px,
+                            (random($height)+20)+px,
+                            0
+            );
+          }
+        }
+      }
+    }
   }
-  5.88235% {
-    clip: rect(86px, 450px, 48px, 0);
+
+  svg {
+    position: absolute;
+    top: $top+px;
+    left: $left+px;
+    fill: $fillColor;
+    background: $background;
+    width: $width+px;
+    height: $height+px;
   }
-  11.76471% {
-    clip: rect(90px, 450px, 81px, 0);
+  svg:nth-child(2),
+  svg:nth-child(3) {
+    clip: rect(0, 0, 0, 0);
   }
-  17.64706% {
-    clip: rect(35px, 450px, 81px, 0);
+  svg:nth-child(2) {
+    fill: $fillHighlight1;
+    left: ($left - 2) + px;
+    animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
   }
-  23.52941% {
-    clip: rect(10px, 450px, 26px, 0);
-  }
-  29.41176% {
-    clip: rect(38px, 450px, 32px, 0);
-  }
-  35.29412% {
-    clip: rect(23px, 450px, 6px, 0);
-  }
-  41.17647% {
-    clip: rect(77px, 450px, 61px, 0);
-  }
-  47.05882% {
-    clip: rect(14px, 450px, 70px, 0);
-  }
-  52.94118% {
-    clip: rect(30px, 450px, 3px, 0);
-  }
-  58.82353% {
-    clip: rect(17px, 450px, 6px, 0);
-  }
-  64.70588% {
-    clip: rect(106px, 450px, 72px, 0);
-  }
-  70.58824% {
-    clip: rect(78px, 450px, 65px, 0);
-  }
-  76.47059% {
-    clip: rect(32px, 450px, 47px, 0);
-  }
-  82.35294% {
-    clip: rect(52px, 450px, 19px, 0);
-  }
-  88.23529% {
-    clip: rect(27px, 450px, 32px, 0);
-  }
-  94.11765% {
-    clip: rect(90px, 450px, 90px, 0);
-  }
-  100% {
-    clip: rect(1px, 450px, 113px, 0);
+  svg:nth-child(3) {
+    fill: $fillHighlight2;
+    left: ($left + 2) + px;
+    animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
   }
 }
