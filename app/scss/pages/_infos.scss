@@ -23,25 +23,22 @@
 }
 .infos_switcher_container {
   color:#ea1b8e;
-  font-size:2.5rem;
-  font-family:streamster;
+  font-size:1rem;
+  font-family:orator;
   position:absolute;
   right:3rem;
-  top:3rem;
+  top:5rem;
 
 
 }
-.infos_switch_button1 {
-  opacity:1;
 
-}.infos_switch_button2 {
-   opacity:0;
- }
 .infos_switcher_button {
   padding:1rem;
-  transform:rotate(-5deg);
   cursor:pointer;
   transition:opacity 0.5s ease-in;
+  border:2px #ea1b8e solid;
+  text-transform:uppercase;
+  transition:all 1s;
 }
 .infos_subtitle_thirdPart_left {
   margin: auto;
@@ -65,11 +62,12 @@
 
   .infos_switcher_container {
     color:#ea1b8e;
-    font-size:2.5rem;
-    font-family:streamster;
+    font-size:1.5rem;
+    font-family:orator;
     position:absolute;
     right:5rem;
     top:10rem;
+
 
 
   }
@@ -90,6 +88,12 @@
 
   .infos_subsection {
     width: 90%;
+    margin: auto;
+    padding:3rem;
+
+  }
+  .infos_subsection_80 {
+    width: 80%;
     margin: auto;
     padding:3rem;
 

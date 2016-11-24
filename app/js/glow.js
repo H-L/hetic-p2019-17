@@ -32,7 +32,7 @@ stage.addChild(displacementSprite);
 container.filters = [displacementFilter];
 
 // BACKGROUND
-var bg = PIXI.Sprite.fromImage('imgs/daniel.jpg');
+var bg = PIXI.Sprite.fromImage('../app/imgs/image_glow.jpg');
 bg.width = renderer.width;
 bg.height = renderer.height;
 

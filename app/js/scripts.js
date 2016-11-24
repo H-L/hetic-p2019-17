@@ -14,7 +14,7 @@ function random_artist_highlight(timer) {
         var artist_image_element=$('.image_artist').last();
             console.log(artist_image_element);
         $(artist_image_element).css({
-            'top': randomInt(0, $(".section_programmation").height()/2) + 'px',
+            'top': randomInt(0, $(".section_programmation").height()/2.5) + 'px',
             'left': randomInt(0, $(".section_programmation").width()/2) + 'px',
             'transition' : '0.5s ease-in',
             'transform' : 'scale(1.5,1.5)',
@@ -89,24 +89,27 @@ window.setInterval(function(){
 /* SWITCH PAGE INFOS */
 
 $('.infos_switcher_button').on('click',function() {
-    $(this).css ({
-        'opacity' : 0,
 
-    });
-    $(this).siblings().css ({
-        'opacity' : 1,
 
-    });
-    var save_visible = $('.infos_switch_visible');
-    $('.infos_switch_hide').each(function () {
-        $(this).removeClass("infos_switch_hide");
-        $(this).addClass("infos_switch_visible");
 
-    });
-    save_visible.each(function () {
-        $(this).removeClass("infos_switch_visible");
-        $(this).addClass("infos_switch_hide");
+        if($(this).html()=="+ où dormir ?") {
+            $(this).html("+ où c'est ? ");
+        }
+        else {
+            $(this).html("+ où dormir ?");
+        }
+        var save_visible = $('.infos_switch_visible');
+        $('.infos_switch_hide').each(function () {
+            $(this).removeClass("infos_switch_hide");
+            $(this).addClass("infos_switch_visible");
 
-    });
+        });
+        save_visible.each(function () {
+            $(this).removeClass("infos_switch_visible");
+            $(this).addClass("infos_switch_hide");
+
+        });
+
+
 
 });

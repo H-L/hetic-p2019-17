@@ -11,13 +11,13 @@ $(document).ready(function(){
 
   function glitchAnimation(){
     glitch = setInterval(
-      function(){
-        var randomImgId = getRandomImg(0, img_sprites.length);
-        // console.log(randomImgId);
-        $('.sprite').not(img_sprites[randomImgId]).addClass('hidden-sprite');
-        $(img_sprites[randomImgId]).removeClass('hidden-sprite');
-      },
-      50
+        function(){
+          var randomImgId = getRandomImg(0, img_sprites.length);
+          // console.log(randomImgId);
+          $('.sprite').not(img_sprites[randomImgId]).addClass('hidden-sprite');
+          $(img_sprites[randomImgId]).removeClass('hidden-sprite');
+        },
+        50
     );
   }
 

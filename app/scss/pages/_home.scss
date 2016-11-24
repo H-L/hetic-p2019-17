@@ -275,7 +275,7 @@
 }
 
 .vjing .presentation_title_container {
-  width: 0%;
+  width: 80%;
   margin: 0;
 }
 
@@ -314,13 +314,14 @@
   width: 80%;
   display: block;
   margin: auto;
-  margin-top: -15rem;
+
 }
 
 .presentation_image_influx {
   width: 80%;
   margin: auto;
   display: block;
+  position:relative;
 }
 
 .presentation_information_annexe {
@@ -328,13 +329,19 @@
   font-family:roboto thin;
   color:$yellow_primary;
   font-size:0.9rem;
+  font-weight:bold;
 }
 
 .learn_more {
   margin-bottom: 10%;
   display: block;
 }
-
+.vjing {
+  transform:translateY(-15rem);
+}
+.presentation_subsection_reverse.arcade {
+  margin-top:-15rem;
+}
 .presentation_subsection_reverse {
   display: flex;
   flex-direction: column;
@@ -350,7 +357,7 @@
 .presentation_background_white {
    padding-top:15%;
    padding-bottom:15rem;
-   background:$white;
+   background:$white_pinky;
 }
 
 .presentation_background_purple {
@@ -359,6 +366,7 @@
   @include gradient-purple;
   display:flex;
   flex-direction:column;
+  animation: 10s focus linear infinite alternate;
 }
 
 .presentation_background_purple_exception {
@@ -368,6 +376,7 @@
   @include gradient-purple;
   display:flex;
   flex-direction:column;
+  animation: 10s focus linear infinite alternate;
 }
 
 /* LOCALISATION */
@@ -376,7 +385,10 @@
   max-width: 100%;
   display: block;
 }
-
+.footer_annexe a {
+  text-decoration:none;
+  color:$white;
+}
 
 .localisation_title__thirdPart {
   width:fit-content;
@@ -405,6 +417,7 @@
   position:relative;
   @include gradient-black;
   padding-bottom:2rem;
+  animation: 10s focus linear infinite alternate;
 }
 
 .footer_subsection {
@@ -504,6 +517,7 @@ html {
   .presentation_subsection .presentation_image_influx {
     height: 25rem;
     width: auto;
+    transform:translateX(-5rem) translateY(-2rem);
     margin-top: 5rem;
   }
   .presentation_subtitle_thirdPart_left {
@@ -538,8 +552,10 @@ html {
     padding-top: 12rem;
   }
   .presentation_subsection_reverse .presentation_image_influx {
-    width: 45%;
-    transform: translateY(5rem);
+    height:25rem;
+    width:auto;
+    order:3;
+    transform: translateY(2rem) translateX(-5rem);
   }
   .presentation_background_purple_exception {
     padding-bottom: 0rem;
@@ -561,6 +577,14 @@ html {
     margin-top: -5rem;
     width: auto;
   }
+  .vjing .presentation_image_outflux {
+    width: auto;
+    height: 30rem;
+    margin: 0;
+    margin-left: 4rem;
+    margin-right: 0rem;
+  }
+
   .presentation_background_white {
     padding-bottom: 15%;
     padding-top: 20%;
@@ -571,6 +595,7 @@ html {
   .vjing .presentation_title_thirdPart {
     margin-top: 3rem;
     margin-left: -2rem;
+    float: right;
   }
 
   .vjing .presentation_text {
@@ -578,12 +603,20 @@ html {
   }
   .arcade {
     width: 60%;
+    transform:translateX(-8rem);
+  }
+  .presentation_subsection_reverse.arcade {
+    margin-top:0;
+  }
+  .vjing {
+    transform:none;
   }
   .arcade .presentation_image_influx {
     width: auto;
     height: 30rem;
     margin: 0;
-    margin-right: -3.8rem;
+    margin-left: 4rem;
+    margin-right: 0rem;
   }
   .arcade .presentation_title_container {
     transform: translateY(-10rem) rotate(-5deg);
@@ -622,7 +655,16 @@ html {
   .footer_annexe_exception {
     transform: translateX(-25rem);
   }
-
+  .programmation_artist.changed::before,
+  .programmation_artist.changed::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 200%;
+    height: 100%;
+    font-size:1.2em;
+  }
 } /* End desktop */
 
 .footer_annexe p {
