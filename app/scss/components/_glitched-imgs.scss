@@ -1,9 +1,0 @@
-.example-three img{
-    max-height: 500px;
-    width:100%;
-}
-
-.example-three{
-    @include imgGlitch("image", 15, 610, 788, 200, 75);
-    height:25rem;
-}
