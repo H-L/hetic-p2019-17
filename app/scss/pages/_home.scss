@@ -23,10 +23,8 @@
   display: inline-block;
   margin: 0.1rem;
   margin-top: 0.2rem;
-
-
-
 }
+
 @keyframes sound_animation_1 {
   0% {
     transform:scaleY(1.5);
@@ -643,17 +641,13 @@ html {
   .footer_annexe {
     display: inline-block;
     vertical-align: top;
-    transform: translateX(-5rem);
-
+    width: 100%;
   }
   .footer_social_container {
     display: inline-block;
     transform: translateX(20rem);
     margin-top: 0;
     width: 50%;
-  }
-  .footer_annexe_exception {
-    transform: translateX(-25rem);
   }
   .programmation_artist.changed::before,
   .programmation_artist.changed::after {
@@ -672,4 +666,11 @@ html {
 }
 .menu_background {
     display:none;
+}
+
+.infos_container .localisation_title__thirdPart{
+  transform: rotate(-5deg) translateY(-3rem);
+}
+.presentation_subtitle_container{
+  z-index: 20;
 }

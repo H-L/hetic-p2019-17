@@ -73,10 +73,9 @@ gulp.task('normaljs', function () {
 
 // -- IMG Minifier for PNG, JPG, GIF, SVG
 gulp.task('imagemin', function () {
-	return gulp.src('app/imgs/original/**/*.{jpg,png,gif,svg}')
+	return gulp.src('app/imgs/**/*.{jpg,png,gif,svg}')
 		.pipe(plugins.imagemin())
-		.pipe(gulp.dest('./dist/imgs'))
-		.pipe(gulp.dest('./app/imgs/compressed'));
+		.pipe(gulp.dest('./dist/imgs'));
 		// .pipe(plugins.notify({
 		// 	message: 'IMG Minified'
 		// }));

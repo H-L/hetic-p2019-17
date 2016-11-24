@@ -22,7 +22,6 @@
   display:block;
   cursor: pointer;
   text-decoration:none;
-
   @include glitch-text;
 }
 
@@ -103,7 +102,6 @@ svg {
   svg {
     width: 100vw;
     height: 100vh;
-
     margin-bottom: -25vh;
   }
 }
