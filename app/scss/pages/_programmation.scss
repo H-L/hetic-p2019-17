@@ -12,6 +12,24 @@
   position: relative;
   width: 100vw;
   height: 60vh;
+  transition: all .3s ease;
+  &.display--artist{
+    width: 100vw;
+    height: 100vh;
+
+    & .slider{
+      width: 100vw;
+      height: 100vh;
+    }
+
+    & .slider--hidden{
+      width: 0;
+      height: 0;
+    }
+    & .slide__artist--infos{
+      justify-content: flex-start;
+    }
+  }
 }
 
 .slider{
@@ -21,6 +39,8 @@
   width: 60vw;
   height: 60vh;
   margin: 0 auto;
+  transition: all .3s ease;
+  transition-property: height, width, opacity;
 
   &--cross{
     position: absolute;
@@ -31,23 +51,13 @@
   }
 }
 
-.slider__artist{
+.slide__artist{
   position: relative;
   min-height: 100%;
-  min-width: 100%;
   overflow: hidden;
   text-align: center;
-
-  // Hide all
-  display: none;
-  visibility: hidden;
-  opacity: 0;
-
-  &.slide--active{
-    display: block;
-    visibility: visible;
-    opacity: 1;
-  }
+  display: block;
+  transition: all .3s .3s ease;
 
   // Border with gradients
   &:before{
@@ -83,6 +93,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 1rem 0 0;
 
     & h2{
       font-family: poppinsM;
@@ -119,17 +131,13 @@
   }
 }
 
-.slider--scale{
-  transform: scale(.8);
-}
-
 .item--hidden{
   display: none;
   visibility: hidden;
   opacity: 0;
 }
 
-.sliders__menu{
+.day__menu{
   width: 100%;
   padding: 0;
   text-transform: uppercase;
@@ -162,5 +170,71 @@
     right: 1.5rem;
     flex-direction: column;
     justify-content: flex-end;
+  }
+}
+
+// Hide slides or sliders
+.slide--hidden, .slider--hidden{
+  visibility: hidden;
+  opacity: 0;
+  width: 0;
+}
+// Show selected slide or slider
+.slide--active{
+  visibility: visible;
+  opacity: 1;
+  min-width: 100%;
+}
+
+.slider--active{
+  visibility: visible;
+  opacity: 1;
+}
+
+.slider--hidden{
+  opacity: 0;
+  padding: 0;
+  height: 0;
+  width: 0;
+}
+
+.programmation_title_container--hidden,
+.programmation_title_container--hidden > *,
+.menu--hidden,
+.chevron--hidden{
+  visibility: hidden;
+  opacity: 0;
+  padding: 0;
+  height: 0;
+  width: 0;
+  background: #000;
+}
+
+@include desktop{
+  .body--wrap{
+    overflow: visible;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .slide__artist{
+    &--content{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--infos{
+      position: relative;
+    }
+  }
+  .item--hidden{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  .cross--hidden{
+    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 }
